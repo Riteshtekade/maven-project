@@ -7,19 +7,19 @@ stages
     }
 
     stage('Validat the code'){
-      steps {withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
+      steps {withMaven(jdk: 'JAVA_HOME', maven: 'MVN_HOME', traceability: true) {
           sh 'mvn validate' 
         }
       }
     }
     stage('Compile the code') {
-      steps {withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
+      steps {withMaven(jdk: 'JAVA_HOME', maven: 'MVN_HOME', traceability: true) {
           sh 'mvn compile'
         }
       }
     }
     stage('Package the code') {
-      steps {withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
+      steps {withMaven(jdk: 'JAVA_HOME', maven: 'MVN_HOME', traceability: true) {
           sh 'mvn package'
         }
       }
