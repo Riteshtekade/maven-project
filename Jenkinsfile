@@ -7,19 +7,19 @@ pipeline {
 
     stage('Validat the code') {
       steps {withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
-          sh 'mvn Validare'
+          sh 'mvn validate'
        
       }
     }
     
     stage('Compile the code') {
       steps withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
-          sh 'mvn Compile'
+          sh 'mvn compile'
     }
 
     stage('Package the code') {
       steps withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
-          sh 'mvn Package'
+          sh 'mvn package'
         }
       }
     }
