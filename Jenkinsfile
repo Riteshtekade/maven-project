@@ -31,10 +31,5 @@ pipeline {
        
       }
     }
-    stage('push docker image to dockerhub') {
-      steps {
-        
-       }
-    }
   }
 }
